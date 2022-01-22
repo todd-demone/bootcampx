@@ -16,15 +16,11 @@ pool.query(`
   WHERE cohorts.name = '${process.argv[2]}'
   ORDER BY teachers.name;
 `)
-.then(
-function fulfillmentHandler(result) {
-  result.rows.forEach(function printTeacher(teacher) {
+.then((result) => {
+  result.rows.forEach((teacher) => {
     console.log(`${teacher.cohort}: ${teacher.teacher}`);
   })
-}
-)
-.catch(
-  function rejectionHandler(error) {
+})
+.catch((error) => {
     console.error('query error: ', error.stack);
-  }
-);
+});

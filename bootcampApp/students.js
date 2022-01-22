@@ -16,7 +16,7 @@ pool.query(`
 `)
 .then((result) => {
   // result.rows is an array of JS objects (1 table row = 1 object)
-  result.rows.forEach(function logStudentInfoToConsole(student) {
+  result.rows.forEach((student) => {
     console.log(`${student.name} has an id of ${student.student_id} and was in the ${student.cohort} cohort.`);
   })
 })
